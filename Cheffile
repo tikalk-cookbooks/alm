@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+# add any opscode dependencey you may have by adding a line like the following:
+# cookbooks 'cookbook_name'
+## and optionally 
+# cookbooks 'cookbook_name', 'cookbook-version' # e.g '1.0.0'
+
+cookbook 'redmine', :git => 'git@github.com:tikalk-cookbooks/redmine.git'
+#cookbook 'gitlab', :git => 'git@github.com:tikalk-cookbooks/gitlab.git'
+#cookbook 'jenkins', git => 'git@github.com:tikalk-cookbooks/jenkins.git'
+#cookbook 'nexus', git => 'git@github.com:tikalk-cookbooks/nexus.git'
+
