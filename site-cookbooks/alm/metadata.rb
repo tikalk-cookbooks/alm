@@ -1,3 +1,4 @@
+name		  "alm"
 maintainer        "Tikal Knowledge LTD"
 maintainer_email  "hagzag@tikalk.com"
 license           "Apache 2.0"

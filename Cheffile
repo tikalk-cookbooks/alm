@@ -9,6 +9,7 @@ site 'http://community.opscode.com/api/v1'
 
 cookbook 'redmine', :git => 'git@github.com:tikalk-cookbooks/redmine.git'
 #cookbook 'gitlab', :git => 'git@github.com:tikalk-cookbooks/gitlab.git'
+cookbook 'alm', :path => 'site-cookbooks/alm'
 #cookbook 'jenkins', git => 'git@github.com:tikalk-cookbooks/jenkins.git'
 #cookbook 'nexus', git => 'git@github.com:tikalk-cookbooks/nexus.git'
 
