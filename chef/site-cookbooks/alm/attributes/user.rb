@@ -1,7 +1,7 @@
 #
-# Cookbook Name:: Tikal-ALM
+# Cookbook Name:: ALM
 #
-# Copyright 2013, Tikalk LIMITED.
+# Copyright 2013, Tikalk LTD.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,3 +16,14 @@
 # limitations under the License.
 #
 ####
+
+default[:prepare][:gname] = 'opencm'
+default[:prepare][:gid] = 771
+
+default[:prepare][:uname] = 'opencm'
+default[:prepare][:uid] = 771
+default[:prepare][:passwd] = node[:prepare][:uname] # whilst testin no override, in prod overitten by databag ...
+
+default[:prepare][:homedir] = '/home/' + node[:prepare][:uname]
+
+
