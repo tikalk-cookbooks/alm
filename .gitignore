@@ -1,5 +1,7 @@
-cookbooks
-tmp
 doc
+tmp
+chef/tmp
+chef/cookbooks
 .DS_Store
+.vagrant
 .idea/*
