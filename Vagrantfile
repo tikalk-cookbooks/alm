@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-require 'multi_json'
+#require 'multi_json'
 
 Vagrant.configure("2") do |config|
   
@@ -13,14 +13,15 @@ Vagrant.configure("2") do |config|
  
 
   config.vm.define "scm" do |cm|
-    config.vm.hostname = "scm"
-    config.vm.provision :chef_solo do |chef|
+    cm.vm.hostname = "scm"
+    cm.vm.provision :chef_solo do |chef|
       # chef.https_proxy    = ""
       # chef.no_proxy       = "127.0.0.1,localhost"
       chef.cookbooks_path = ["chef/cookbooks", "chef/site-cookbooks"]
       chef.roles_path     = ["chef/roles"]
       chef.log_level      = ENV['CHEF_LOG'] ? ENV['CHEF_LOG'].to_sym : :debug    
       chef.add_role "common"
+      chef.add_role "scm"
 
       chef.json = {
 
@@ -31,9 +32,9 @@ Vagrant.configure("2") do |config|
   
   # Define the CI server - jenkins + reverse proxy [ apache2 / naginx ] ... 
   config.vm.define "ci" do |ci|
-    config.vm.hostname = "ci"
-    config.vm.network "public_network", :bridge => 'vnet0'
-    config.vm.provision :chef_solo do |chef|
+    ci.vm.hostname = "ci"
+    ci.vm.network "public_network", :bridge => 'vnet0'
+    ci.vm.provision :chef_solo do |chef|
       # chef.https_proxy    = ""
       # chef.no_proxy       = "127.0.0.1,localhost"
       chef.cookbooks_path = ["chef/cookbooks", "chef/site-cookbooks"]
@@ -49,9 +50,9 @@ Vagrant.configure("2") do |config|
   end 
 
   config.vm.define "bug-tracker" do |bt|
-    config.vm.hostname = "bt"
-    config.vm.network "public_network", :bridge => 'vnet0'
-    config.vm.provision :chef_solo do |chef|	
+    bt.vm.hostname = "bt"
+    bt.vm.network "public_network", :bridge => 'vnet0'
+    bt.vm.provision :chef_solo do |chef|	
       # chef.https_proxy    = ""
       # chef.no_proxy       = "127.0.0.1,localhost"
       chef.cookbooks_path = ["chef/cookbooks", "chef/site-cookbooks"]
