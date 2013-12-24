@@ -1,0 +1,11 @@
+{
+  "id": "hellorandm",
+  "company_name": "CompanyX Inc",
+  "dns_prefix": "compx",
+  "expire_date": "",
+  "purge_date": "",
+  "jenkins_version": "distro-native",
+  "syncscm_repo": "git@github.com:timor-raiman/test-github.git",
+  "plugin_stacks": [{"basic": 1.0.0}, {"java": 1.0.0}, {"ruby": 1.0.0}],
+  "specific_plugins": [{"openid": "1.8"}, {"jobgenerator": "1.19"}]
+}

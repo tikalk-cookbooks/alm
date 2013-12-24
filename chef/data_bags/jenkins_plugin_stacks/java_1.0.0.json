@@ -1,0 +1,9 @@
+{
+  "id": "java_1.0.0",
+  "stack_name": "java",
+  "stack_version": "1.0.0",
+  "plugins": [
+  	{"maven": "1.10"},
+  	{"ant":"1.2"}
+  ]
+}

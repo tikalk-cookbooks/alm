@@ -1,0 +1,9 @@
+{
+  "id": "ruby_1.0.0",
+  "stack_name": "ruby",
+  "stack_version": "1.0.0",
+  "plugins": [
+  	{"ruby": "1.2"},
+  	{"rake":"1.7.8"}
+  ]
+}
