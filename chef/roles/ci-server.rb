@@ -1,6 +1,6 @@
 name 'ci-server'
 description 'Installs a Continuous Integration server [Jenkins]'
-run_list 'recipe[jenkins::server]', 'recipe[jenkins::proxy]'
+run_list 'recipe[apt]', 'recipe[jenkins::server]', 'recipe[jenkins::proxy]'
 
 default_attributes({
   # Sets java version
@@ -15,7 +15,7 @@ default_attributes({
   :jenkins => {
         #:iptables_allow => 'enable',
         :http_proxy => {
-          :variant => "apache2"
+          :variant => "nginx"
         }
   }  
 
